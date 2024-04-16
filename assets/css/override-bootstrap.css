@@ -1,0 +1,7 @@
+:root {
+    --success: #559B43;
+}
+h1 {
+    color: var(--success);
+    font-family: monospace;
+}
