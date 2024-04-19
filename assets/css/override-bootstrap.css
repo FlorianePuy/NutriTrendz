@@ -1,6 +1,9 @@
 :root {
     --success: #559B43;
 }
+body {
+    font-size: 0.9em;
+}
 h1,h2 {
     color: var(--success);
     font-family: monospace;
