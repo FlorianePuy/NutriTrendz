@@ -1,5 +1,20 @@
 <?php
     require_once __DIR__.'/templates/header.php';
+    
+    $articles = [
+            ["title"=>"Le Mythe des Régimes à la Mode : Démystification et Réalité",
+                "content"=>"Découvrez la vérité derrière les régimes à la mode dans notre dernier article sur la nutrition. Des régimes cétogène et paléo au jeûne intermittent, nous explorons les promesses et les réalités de ces approches populaires. Nous démêlons les mythes de la perte de poids rapide et vous aidons à adopter une approche plus saine et plus équilibrée de la nutrition. Rejoignez-nous pour découvrir comment cultiver une relation durable avec la nourriture et atteindre vos objectifs de santé de manière réaliste et durable.",
+                "image"=>"myths-diet.png"
+            ],
+            ["title"=>"Les Aliments Superstars : Quels Aliments Ajouter à Votre Assiette pour une Meilleure Santé ?",
+            "content"=>"Découvrez la vérité derrière les régimes à la mode dans notre dernier article sur la nutrition. Des régimes cétogène et paléo au jeûne intermittent, nous explorons les promesses et les réalités de ces approches populaires. Nous démêlons les mythes de la perte de poids rapide et vous aidons à adopter une approche plus saine et plus équilibrée de la nutrition. Rejoignez-nous pour découvrir comment cultiver une relation durable avec la nourriture et atteindre vos objectifs de santé de manière réaliste et durable.",
+            "image"=>"myths-diet.png"
+            ],
+            ["title"=>"Le Véritable Impact des Compléments Alimentaires",
+            "content"=>"Découvrez la vérité derrière les régimes à la mode dans notre dernier article sur la nutrition. Des régimes cétogène et paléo au jeûne intermittent, nous explorons les promesses et les réalités de ces approches populaires. Nous démêlons les mythes de la perte de poids rapide et vous aidons à adopter une approche plus saine et plus équilibrée de la nutrition. Rejoignez-nous pour découvrir comment cultiver une relation durable avec la nourriture et atteindre vos objectifs de santé de manière réaliste et durable.",
+            "image"=>"myths-diet.png"
+            ],
+    ];
 ?>
 <main>
     <div class="container col-md-10 px-4 py-5">
@@ -21,9 +36,9 @@
     </div>
 </main>
 <h2 class="text-center">Les dernières publications :</h2>
-<section class="card-deck d-flex container-fluid justify-content-around my-md-5">
+<section class="card-deck d-flex container-fluid justify-content-around my-md-4">
     <?php for($i=0;$i<3;$i++) {?>
-    <div class="card col-md-3 " >
+    <div class="card col-md-3">
         <img src="uploads_articles/myths-diet.png" class="card-img-top" alt="illustration d'article de blog">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
