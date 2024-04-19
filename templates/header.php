@@ -1,3 +1,19 @@
+<?php
+    $mainMenu = [
+        ["page"=>"index.php",
+            "title"=>"Accueil",
+            "meta_description"=>"Une meta description est un résumé d'une page web qui peut apparaître dans les résultats des moteurs de recherche. Les meta descriptions ..."
+        ],
+        ["page"=>"a_propos.php",
+            "title"=>"À propos",
+            "meta_description"=>"Une meta description est un résumé d'une page web qui peut apparaître dans les résultats des moteurs de recherche. Les meta descriptions ..."
+        ],
+        ["page"=>"actualites.php",
+            "title"=>"Actualités",
+            "meta_description"=>"Une meta description est un résumé d'une page web qui peut apparaître dans les résultats des moteurs de recherche. Les meta descriptions ..."
+        ]
+    ];
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -11,17 +27,15 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mb-4 px-2
 border-bottom">
     <div class="col-md-3 mb-2 mb-md-0">
-        <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
+        <a href="<?= $mainMenu[0]['page'];?>" class="d-inline-flex link-body-emphasis text-decoration-none">
             <img class="w-25" src="assets/img/NutriTrendz-logo-removedBG.png" alt="logo du blog">
         </a>
     </div>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 link-warning">Features</a></li>
-        <li><a href="#" class="nav-link px-2 link-warning">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 link-warning">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 link-warning">About</a></li>
+        <?php foreach ($mainMenu as $filePage) { ?>
+            <li><a href="<?= $filePage['page'];?>" class="nav-link px-2 link-warning"><?= $filePage['title'];?></a></li>
+        <?php } ?>
     </ul>
 
     <div class="col-md-3 text-end">
