@@ -1,15 +1,18 @@
 <?php
     $mainMenu = [
-        ["page"=>"index.php",
+        "index.php"=>[
             "title"=>"Accueil",
+            "head_title"=>"Accueil NutriTrendz",
             "meta_description"=>"Une meta description est un résumé d'une page web qui peut apparaître dans les résultats des moteurs de recherche. Les meta descriptions ..."
         ],
-        ["page"=>"a_propos.php",
+        "a_propos.php"=>[
             "title"=>"À propos",
+            "head_title"=>"À Propos NutriTrendz",
             "meta_description"=>"Une meta description est un résumé d'une page web qui peut apparaître dans les résultats des moteurs de recherche. Les meta descriptions ..."
         ],
-        ["page"=>"actualites.php",
+        "actualites.php"=>[
             "title"=>"Actualités",
+            "head_title"=>"Actualités NutriTrendz",
             "meta_description"=>"Une meta description est un résumé d'une page web qui peut apparaître dans les résultats des moteurs de recherche. Les meta descriptions ..."
         ]
     ];
@@ -27,14 +30,14 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mb-4 px-2
 border-bottom">
     <div class="col-md-3 mb-2 mb-md-0">
-        <a href="<?= $mainMenu[0]['page'];?>" class="d-inline-flex link-body-emphasis text-decoration-none">
+        <a href="<?= array_key_first($mainMenu)?>" class="d-inline-flex link-body-emphasis text-decoration-none">
             <img class="w-25" src="assets/img/NutriTrendz-logo-removedBG.png" alt="logo du blog">
         </a>
     </div>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <?php foreach ($mainMenu as $filePage) { ?>
-            <li><a href="<?= $filePage['page'];?>" class="nav-link px-2 link-warning"><?= $filePage['title'];?></a></li>
+        <?php foreach ($mainMenu as $key=>$pageInfos) { ?>
+            <li><a href="<?= $key;?>" class="nav-link px-2 link-warning"><?= $pageInfos['title'];?></a></li>
         <?php } ?>
     </ul>
 
