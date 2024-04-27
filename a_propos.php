@@ -1,4 +1,5 @@
 <?php
+    require_once __DIR__.'/app/mainMenu.php';
     require_once __DIR__.'/templates/header.php';
 ?>
 <h1>À propos</h1>
