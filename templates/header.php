@@ -22,7 +22,7 @@ border-bottom">
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
         <?php foreach ($mainMenu as $key=>$pageInfos) {
-            if(!$pageInfos['exclude']){ ?>
+            if(!array_key_exists('exclude',$mainMenu)){ ?>
                 <li><a href="<?= $key;?>" class="nav-link px-2 link-warning
                         <?= ($key === $currentPage) ? 'active' : '' ?>"><?= $pageInfos['title']; ?>
                     </a>
