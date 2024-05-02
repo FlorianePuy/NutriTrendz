@@ -16,7 +16,7 @@
                     nutrition !</h1>
                 <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-dark btn-lg px-4 me-md-2">Primary</button>
+                    <button type="button" class="btn btn-primary text-light btn-lg px-4 me-md-2">Primary</button>
                 </div>
             </div>
         </div>
