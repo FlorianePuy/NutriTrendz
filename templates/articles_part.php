@@ -1,13 +1,14 @@
 <?php
+
 if ($article['image']=== null){
-    $image = "default-image.png";
+    $imageFileName = "default-image.png";
 }else {
-    $image=htmlentities($article['image']);
+    $imageFileName=htmlentities($article['image']);
 }
 
 ?>
 <div class="card col-md-3">
-    <img src="uploads_articles/<?=$image ?>" class="card-img-top" alt="illustration
+    <img src="<?=IMAGES_ARTICLE_PATH.$imageFileName; ?>" class="card-img-top" alt="illustration
     d'article de blog">
     <div class="card-body">
         <h6 class="card-title text-center text-decoration-underline"><?= htmlentities($article['title']); ?></h6>
