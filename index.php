@@ -1,7 +1,14 @@
 <?php
+    require_once __DIR__.'/app/config.php';
+    require_once __DIR__.'/app/pdo.php';
     require_once __DIR__.'/app/mainMenu.php';
     require_once __DIR__.'/templates/header.php';
     require_once __DIR__.'/app/articles.php';
+
+    $query = $pdo->prepare("SELECT * FROM articles;");
+    $query->execute();
+    $articles = $query->fetchAll(PDO::FETCH_ASSOC);
+    
 ?>
 <main>
     <div class="container col-md-10 px-4 py-5">
