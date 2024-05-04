@@ -5,7 +5,7 @@
     require_once __DIR__.'/templates/header.php';
     require_once __DIR__.'/app/articles.php';
 
-    $articles=getArticles($pdo);
+    $articles=getArticles($pdo,LIMIT_ARTICLES_ACCUEIL);
     
 ?>
 <main>

@@ -1,5 +1,6 @@
 <?php
-define("DB_NAME","nutritrendz");
-define("DB_SERVER_NAME","localhost");
-define("DB_USER","root");
-define("DB_PASSWORD","");
+const DB_NAME = "nutritrendz";
+const DB_SERVER_NAME = "localhost";
+const DB_USER = "root";
+const DB_PASSWORD = "";
+const LIMIT_ARTICLES_ACCUEIL = 3;
