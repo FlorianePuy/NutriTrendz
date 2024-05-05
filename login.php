@@ -15,7 +15,7 @@
             if ($user['role'] === 'user'){
                 header("location: index.php");
             }elseif ($user['role'] ==='admin'){
-                header("location: admin/templates/index.php");
+                header("location: admin/index.php");
             }
         }else{
             $errorList [] = "Email ou Mot de passe Incorrect";
