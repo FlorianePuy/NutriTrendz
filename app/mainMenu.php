@@ -20,5 +20,11 @@ $mainMenu = [
         "head_title"=>"Actualité - NutriTrendz",
         "meta_description"=>"Une meta description est un résumé d'une page web qui peut apparaître dans les résultats des moteurs de recherche. Les meta descriptions ...",
         "exclude"=>true
+    ],
+    "login.php"=>[
+    "title"=>"Connexion",
+    "head_title"=>"Connexion - NutriTrendz",
+    "meta_description"=>"Une meta description est un résumé d'une page web qui peut apparaître dans les résultats des moteurs de recherche. Les meta descriptions ...",
+    "exclude"=>true
     ]
 ];

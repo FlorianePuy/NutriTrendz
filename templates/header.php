@@ -33,7 +33,7 @@ border-bottom">
     </ul>
 
     <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-warning me-2">Login</button>
+        <a href="login.php" type="button" class="btn btn-outline-warning me-2">Login</a>
         <button type="button" class="btn btn-warning text-light">Sign-up</button>
     </div>
 </header>
