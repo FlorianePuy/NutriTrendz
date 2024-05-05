@@ -5,8 +5,17 @@
     require_once __DIR__.'/templates/header.php';
     require_once __DIR__.'/app/articles.php';
 
-    $article = getArticleById($pdo,(int)$_GET['id']);
+    $errorList =[];
+    if (isset($_GET['id'])) {
+        $article = getArticleById($pdo, (int)$_GET['id']);
+        if (!$article){
+            $errorList[]="Oops ! Article Introuvable... :( ";
+        }
+    }else{
+        $errorList[]="Oops ! Article Introuvable... :( ";
+    }
 
+    if (empty($errorList)) {
 ?>
 <div class="px-4 py-5 my-5 text-center">
     <img class="d-block mx-auto mb-4" src="uploads_articles/<?= $article['image'];?>" alt="" width="700" >
@@ -22,5 +31,10 @@
     </div>
 </div>
 <?php
+    }else{
+        foreach ($errorList as $error){
+            echo "<h1 class=\"text-center display-5 fw-bold m-3\">".$error."</h1>";
+        }
+    }
 require_once __DIR__.'/templates/footer.php';
 ?>
