@@ -1,9 +1,11 @@
 <?php
+    require_once __DIR__.'/app/config.php';
+    require_once __DIR__.'/app/pdo.php';
     require_once __DIR__.'/app/mainMenu.php';
     require_once __DIR__.'/templates/header.php';
     require_once __DIR__.'/app/articles.php';
 
-    $article = $articles[(int)$_GET['id']];
+    $article = getArticleById($pdo,(int)$_GET['id']);
 
 ?>
 <div class="px-4 py-5 my-5 text-center">

@@ -11,4 +11,11 @@
      }
      $query->execute();
      return $query->fetchAll(PDO::FETCH_ASSOC);
- };
+ }
+function getArticleById(PDO $pdo, int $id):array|bool
+{
+  $query= $pdo->prepare("SELECT * FROM articles WHERE id=:id");
+  $query->bindValue(":id",$id,PDO::PARAM_INT);
+  $query->execute();
+  return $query->fetch(PDO::FETCH_ASSOC);
+}
