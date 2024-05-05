@@ -1,6 +1,15 @@
 <?php
+    require_once __DIR__.'/app/config.php';
+    require_once __DIR__.'/app/pdo.php';
+    require_once __DIR__.'/app/user.php';
     require_once __DIR__.'/app/mainMenu.php';
     require_once __DIR__.'/templates/header.php';
+
+    if (isset($_POST['email'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $res = verifyUserLoginPassword($pdo,$email,$password);
+    }
 ?>
 <main class="container d-flex flex-column">
     <h1 class="fw-bold">Connexion</h1>
