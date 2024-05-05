@@ -1,12 +1,12 @@
 <?php
     require_once __DIR__.'/app/config.php';
+    require_once __DIR__.'/app/session.php';
     require_once __DIR__.'/app/pdo.php';
     require_once __DIR__.'/app/mainMenu.php';
     require_once __DIR__.'/templates/header.php';
     require_once __DIR__.'/app/articles.php';
 
     $articles=getArticles($pdo,LIMIT_ARTICLES_ACCUEIL);
-    
 ?>
 <main>
     <div class="container col-md-10 px-4 py-5">

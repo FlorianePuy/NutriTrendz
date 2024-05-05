@@ -1,5 +1,5 @@
 <?php
-const DOMAIN = "localhost";
+const DOMAIN = ".localhost";
 const DB_NAME = "nutritrendz";
 const DB_SERVER_NAME = "localhost";
 const DB_USER = "root";
