@@ -5,14 +5,26 @@
     require_once __DIR__.'/app/mainMenu.php';
     require_once __DIR__.'/templates/header.php';
 
+    $errorList = [];
+
     if (isset($_POST['email'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $res = verifyUserLoginPassword($pdo,$email,$password);
+        $user = verifyUserLoginPassword($pdo,$email,$password);
+        if ($user){
+
+        }else{
+            $errorList [] = "Email ou Mot de passe Incorrect";
+        }
     }
 ?>
 <main class="container d-flex flex-column">
     <h1 class="fw-bold">Connexion</h1>
+    <?php foreach ($errorList as $error) { ?>
+        <div class="alert alert-danger">
+            <?= $error ?>
+        </div>
+    <?php } ?>
     <form class="mb-3 d-flex flex-column" action="" method="post">
             <label class="form-label mb-3 ">Email
                 <input class="form-control" type="email" name="email">
