@@ -18,7 +18,9 @@
     if (empty($errorList)) {
 ?>
 <div class="px-4 py-5 my-5 text-center">
-    <img class="d-block mx-auto mb-4" src="uploads_articles/<?= $article['image'];?>" alt="" width="700" >
+    <img class="d-block mx-auto mb-4"
+         src="uploads_articles/<?= (empty($article['image'])) ? "default-image.png":$article['image'];?>"
+         alt="" width="700" >
     <h1 class="display-5 fw-bold"><?= $article['title']; ?></h1>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4 text-justify">
