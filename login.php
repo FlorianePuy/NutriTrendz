@@ -13,7 +13,7 @@
         $password = $_POST['password'];
         $user = verifyUserLoginPassword($pdo,$email,$password);
         if ($user){
-
+            session_regenerate_id(true);
             $_SESSION['user']=$user;
             if ($user['role'] === 'user'){
                 header("location: index.php");
