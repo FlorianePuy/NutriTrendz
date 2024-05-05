@@ -22,9 +22,9 @@ border-bottom">
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
         <?php foreach ($mainMenu as $key=>$pageInfos) {
-            if(!$pageInfos['exclude']){ ?>
-                <li><a href="<?= $key;?>" class="nav-link px-2 link-warning
-                        <?= ($key === $currentPage) ? 'active' : '' ?>"><?= $pageInfos['title']; ?>
+            if(!array_key_exists('exclude',$pageInfos)){ ?>
+                <li><a href="<?= $key;?>" class="nav-link px-2 link-primary
+                        <?= ($key === $currentPage) ? 'active text-light' : '' ?>"><?= $pageInfos['title']; ?>
                     </a>
                 </li>
             <?php
@@ -33,7 +33,7 @@ border-bottom">
     </ul>
 
     <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-dark me-2">Login</button>
-        <button type="button" class="btn btn-dark">Sign-up</button>
+        <button type="button" class="btn btn-outline-warning me-2">Login</button>
+        <button type="button" class="btn btn-warning text-light">Sign-up</button>
     </div>
 </header>

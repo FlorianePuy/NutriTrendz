@@ -1,7 +1,12 @@
 <?php
+    require_once __DIR__.'/app/config.php';
+    require_once __DIR__.'/app/pdo.php';
     require_once __DIR__.'/app/mainMenu.php';
     require_once __DIR__.'/templates/header.php';
     require_once __DIR__.'/app/articles.php';
+
+    $articles=getArticles($pdo,LIMIT_ARTICLES_ACCUEIL);
+    
 ?>
 <main>
     <div class="container col-md-10 px-4 py-5">
@@ -16,7 +21,7 @@
                     nutrition !</h1>
                 <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-dark btn-lg px-4 me-md-2">Primary</button>
+                    <button type="button" class="btn btn-primary text-light btn-lg px-4 me-md-2">Primary</button>
                 </div>
             </div>
         </div>
@@ -24,7 +29,7 @@
 </main>
 <h2 class="text-center">Les dernières publications :</h2>
 <section class="card-deck d-flex container-fluid justify-content-around my-md-4">
-    <?php foreach ($articles as $article) {
+    <?php foreach ($articles as $key=>$article) {
         require __DIR__ . '/templates/articles_part.php';
     } ?>
 </section>
