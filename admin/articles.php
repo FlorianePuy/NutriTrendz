@@ -3,8 +3,14 @@
     require_once __DIR__ . '/../app/config.php';
     require_once __DIR__ . '/../app/pdo.php';
     require_once __DIR__ . '/../app/articles.php';
+
+    if (isset($_GET["page"])){
+        $page = (int)$_GET["page"];
+    }else {
+        $page = 1;
+    }
     
-    $articles = getArticles($pdo,ADMIN_ITEM_PER_PAGE);
+    $articles = getArticles($pdo,ADMIN_ITEM_PER_PAGE,$page);
     
 ?>
     <h1 class="mt-3 fw-bold">Liste des articles</h1>

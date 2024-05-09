@@ -2,6 +2,9 @@
 
  function getArticles (PDO $pdo, int $limit=null, int $page=1):array
  {
+     if ($page<=0){
+         $page=1;
+     }
      $sql = "SELECT * FROM articles ORDER BY id DESC";
      if ($limit){
              $offset = ($page-1)*$limit;
