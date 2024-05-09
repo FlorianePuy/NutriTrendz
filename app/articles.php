@@ -1,11 +1,14 @@
 <?php
 
- function getArticles (PDO $pdo, int $limit=null):array
+ function getArticles (PDO $pdo, int $limit=null, int $page=1):array
  {
      $sql = "SELECT * FROM articles ORDER BY id DESC";
      if ($limit){
-         $query = $pdo->prepare($sql." LIMIT :limit");
-         $query->bindValue(":limit",$limit,PDO::PARAM_INT);
+             $offset = ($page-1)*$limit;
+             $sql.=" LIMIT :offset,:limit ";
+             $query = $pdo->prepare($sql);
+             $query->bindValue(":offset",$offset,PDO::PARAM_INT);
+             $query->bindValue(":limit",$limit,PDO::PARAM_INT);
      }else{
          $query = $pdo->prepare($sql);
      }
