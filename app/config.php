@@ -6,3 +6,4 @@ const DB_USER = "root";
 const DB_PASSWORD = "";
 const LIMIT_ARTICLES_ACCUEIL = 3;
 const IMAGES_ARTICLE_PATH = "uploads_articles/";
+const ADMIN_ITEM_PER_PAGE = 10;

@@ -27,13 +27,13 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
+                <a href="index.php" class="nav-link active" aria-current="page">
                     <i class="bi bi-house-door"></i>
                     Home
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link text-white">
+                <a href="articles.php" class="nav-link text-white">
                     <i class="bi bi-card-list"></i>
                     Articles
                 </a>
