@@ -1,3 +1,9 @@
+<?php
+    require_once __DIR__.'/../../app/config.php';
+    require_once __DIR__.'/../../app/session.php';
+
+    adminOnly();
+?>
 <!doctype html>
 <html lang="fr">
 <head>
