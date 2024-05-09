@@ -1,4 +1,6 @@
 <?php
+    require_once __DIR__.'/../app/config.php';
+    require_once __DIR__.'/../app/session.php';
     $currentPage = basename($_SERVER['SCRIPT_NAME']);
 ?>
 <!doctype html>
@@ -33,7 +35,10 @@ border-bottom">
     </ul>
 
     <div class="col-md-3 text-end">
-        <a href="login.php" type="button" class="btn btn-outline-warning me-2">Login</a>
-        <button type="button" class="btn btn-warning text-light">Sign-up</button>
+        <?php if(isset($_SESSION["user"])) { ?>
+            <a href="logout.php" type="button" class="btn btn-warning text-light">Déconnexion</a>
+        <?php }else { ?>
+            <a href="login.php" type="button" class="btn btn-outline-warning me-2">Login</a>
+        <?php } ?>
     </div>
 </header>

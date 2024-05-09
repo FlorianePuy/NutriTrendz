@@ -7,4 +7,5 @@ session_set_cookie_params([
     'domain' => DOMAIN,
     'httponly' => true
 ]);
+
 session_start();
