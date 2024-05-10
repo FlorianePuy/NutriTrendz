@@ -5,12 +5,13 @@
     require_once __DIR__ . '/../app/articles.php';
 
     if (isset($_GET["page"])){
-        $page = (int)$_GET["page"];
+        $currentPage = (int)$_GET["page"];
     }else {
-        $page = 1;
+        $currentPage = 1;
     }
     
-    $articles = getArticles($pdo,ADMIN_ITEM_PER_PAGE,$page);
+    $articles = getArticles($pdo,ADMIN_ITEM_PER_PAGE,$currentPage);
+    $totalPages = 2;
     
 ?>
     <h1 class="mt-3 fw-bold">Liste des articles</h1>
@@ -33,6 +34,14 @@
         <?php    } ?>
         </tbody>
     </table>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <?php for($i=1; $i <= $totalPages; $i++) {?>
+            <li class="page-item"><a class="page-link" href="articles.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+           <?php } ?>
+        </ul>
+    </nav>
 
 <?php
 require_once __DIR__ . '/templates/footer.php';
