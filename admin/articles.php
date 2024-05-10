@@ -11,7 +11,9 @@
     }
     
     $articles = getArticles($pdo,ADMIN_ITEM_PER_PAGE,$currentPage);
+    $totalArticles = countTotalArticles($pdo);
     $totalPages = 2;
+    var_dump($totalPages);
     
 ?>
     <h1 class="mt-3 fw-bold">Liste des articles</h1>
@@ -35,6 +37,7 @@
         </tbody>
     </table>
 
+    <?php if($totalPages>1) {?>
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <?php for($i=1; $i <= $totalPages; $i++) {?>
@@ -42,7 +45,7 @@
            <?php } ?>
         </ul>
     </nav>
-
+    <?php }?>
 <?php
 require_once __DIR__ . '/templates/footer.php';
 ?>

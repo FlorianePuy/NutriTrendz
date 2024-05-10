@@ -12,8 +12,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NutriTrendz - Administration</title>
-    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/override-bootstrap.css">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/override-bootstrap.css">
     <link rel="icon" type="image/svg" sizes="32x32" href="../../assets/img/NutriTrendz-logo-removedBG.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
