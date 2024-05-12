@@ -12,9 +12,8 @@
     
     $articles = getArticles($pdo,ADMIN_ITEM_PER_PAGE,$currentPage);
     $totalArticles = countTotalArticles($pdo);
-    $totalPages = 2;
-    var_dump($totalPages);
-    
+    $totalPages = ceil($totalArticles['total']/ADMIN_ITEM_PER_PAGE);
+
 ?>
     <h1 class="mt-3 fw-bold">Liste des articles</h1>
 

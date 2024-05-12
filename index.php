@@ -28,7 +28,7 @@
     </div>
 </main>
 <h2 class="text-center">Les dernières publications :</h2>
-<section class="card-deck d-flex container-fluid justify-content-around my-md-4">
+<section class="card-deck d-flex container-fluid justify-content-around row my-md-4">
     <?php foreach ($articles as $key=>$article) {
         require __DIR__ . '/templates/articles_part.php';
     } ?>
