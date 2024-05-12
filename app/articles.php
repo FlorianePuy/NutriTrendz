@@ -26,7 +26,8 @@ function getArticleById(PDO $pdo, int $id):array|bool
   return $query->fetch(PDO::FETCH_ASSOC);
 }
 
-function countTotalArticles(PDO $pdo):array {
+function countTotalArticles(PDO $pdo):array
+{
     $query = $pdo->prepare("SELECT COUNT(*) as total FROM articles");
     $query ->execute();
     return $query->fetch(PDO::FETCH_ASSOC);

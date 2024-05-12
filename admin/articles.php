@@ -40,7 +40,9 @@
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <?php for($i=1; $i <= $totalPages; $i++) {?>
-            <li class="page-item"><a class="page-link" href="articles.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+            <li class="page-item">
+                <a class="page-link <?=($currentPage===$i) ? "active" : "" ?>" href="articles.php?page=<?=$i;?>"><?=$i;?></a>
+            </li>
            <?php } ?>
         </ul>
     </nav>

@@ -33,6 +33,6 @@
         require __DIR__ . '/templates/articles_part.php';
     } ?>
 </section>
-<?php 
+<?php
     require_once __DIR__.'/templates/footer.php';
 ?>

@@ -3,6 +3,7 @@
     require_once __DIR__.'/../../app/session.php';
 
     adminOnly();
+    $currentPage = basename($_SERVER['SCRIPT_NAME']);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -21,19 +22,19 @@
 <div class="container d-flex">
     <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-4">Sidebar</span>
+            <i style="font-size: 1.5rem;" class="bi bi-speedometer2 mx-2"></i>
+            <span class="fs-4">Dashboard</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="index.php" class="nav-link active" aria-current="page">
+                <a href="index.php" class="nav-link text-light <?=($currentPage==='index.php') ? "active" : "" ?>">
                     <i class="bi bi-house-door"></i>
                     Home
                 </a>
             </li>
             <li>
-                <a href="articles.php" class="nav-link text-white">
+                <a href="articles.php" class="nav-link text-light <?=($currentPage==='articles.php') ? "active" : "" ?>">
                     <i class="bi bi-card-list"></i>
                     Articles
                 </a>

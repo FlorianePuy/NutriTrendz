@@ -27,8 +27,19 @@
             <?= $article['content_long'];?>
         </p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-primary text-light btn-lg px-4 gap-3">Primary button</button>
-            <button type="button" class="btn btn-outline-warning btn-lg px-4">Secondary</button>
+            <?php if(getArticleById($pdo,$article['id']+1)) { ?>
+            <a type="button" class="btn btn-primary text-light btn-lg" href="actualite.php?id=<?=$article['id']+1; ?>">
+                <i class="bi bi-caret-left"></i>
+                Article Précédent
+            </a>
+            <?php }
+                if(getArticleById($pdo,$article['id']-1)) {
+            ?>
+            <a type="button" class="btn btn-outline-warning btn-lg px-4" href="actualite.php?id=<?=$article['id']-1; ?>">
+                Article Suivant
+                <i class="bi bi-caret-right"></i>
+            </a>
+            <?php } ?>
         </div>
     </div>
 </div>
