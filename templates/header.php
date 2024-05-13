@@ -15,10 +15,14 @@
     <title><?= $mainMenu[$currentPage]['head_title'] ?></title>
 </head>
 <body>
-<header class="d-flex flex-wrap align-items-center mb-4 px-2 border-bottom">
-        <a href="<?= array_key_first($mainMenu)?>" class="w-25 d-inline-flex">
-            <img class="w-25" src="assets/img/NutriTrendz-logo-removedBG.png" alt="logo du blog">
-        </a>
+<header class="d-flex justify-content-center align-items-center justify-content-between px-2
+border-bottom">
+        <div id="logo-link">
+            <a href="<?= array_key_first($mainMenu)?>">
+                <img class="img-fluid" src="assets/img/NutriTrendz-logo-removedBG.png" alt="logo du blog">
+            </a>
+        </div>
+        <div class="">
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills mx-auto">
             <?php foreach ($mainMenu as $key=>$pageInfos) {
                 if(!array_key_exists('exclude',$pageInfos)){ ?>
@@ -30,7 +34,7 @@
                 }
             } ?>
         </ul>
-
+        </div>
     <div class="text-end">
         <?php if(isset($_SESSION["user"])) { ?>
             <a href="logout.php" type="button" class="btn btn-warning text-light">
