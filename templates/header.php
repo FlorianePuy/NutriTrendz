@@ -48,7 +48,14 @@ border-bottom">
             </a>
             <?php } ?>
         <?php }else { ?>
-            <a href="login.php" type="button" class="btn btn-outline-warning me-2">Login</a>
+            <a href="inscription.php" type="button" class="btn btn-warning text-light">
+                <i class="bi bi-box-arrow-in-right"></i>
+                Inscription
+            </a>
+            <a href="login.php" type="button" class="btn btn-outline-warning me-2">
+                <i class="bi bi-power"></i>
+                Login
+            </a>
         <?php } ?>
     </div>
 </header>

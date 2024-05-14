@@ -3,7 +3,8 @@
     require_once __DIR__.'/templates/header.php';
 ?>
 
-<div class="container d-flex flex-column">
+<div class="container d-flex flex-column mt-3">
+    <h1 class="fw-bold">Inscription</h1>
     <form class="p-4 d-flex flex-column">
             <label class="form-label mb-3">Prénom
                 <input type="text" class="form-control">

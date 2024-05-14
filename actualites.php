@@ -7,7 +7,7 @@
 
     $articles=getArticles($pdo);
 ?>
-<h1 class="text-center fw-bold">Toute les Actualités</h1>
+<h1 class="text-center fw-bold mt-3">Toute les Actualités</h1>
     <section class="card-deck container-fluid row g-4 d-flex justify-content-center mb-3">
         <?php foreach ($articles as $key=>$article) {
             require __DIR__ . '/templates/articles_part.php';
