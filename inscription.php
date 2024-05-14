@@ -5,14 +5,32 @@
     require_once __DIR__.'/templates/header.php';
     require_once __DIR__.'/app/user.php';
 
+    $messages=[];
+    $errors=[];
+
     if (isset($_POST['addUser'])) {
         $resultat = addUser($pdo, $_POST['first_name'],$_POST['last_name'],$_POST['email'],$_POST['password']);
-        var_dump($resultat);
+        if ($resultat){
+            $messages[]='Merci pour votre inscription';
+        }else {
+            $errors[]='Une erreur est survenue, échec de l\'inscription';
+        }
     }
 ?>
 
 <div class="container d-flex flex-column mt-3">
     <h1 class="fw-bold">Inscription</h1>
+    <?php foreach ($messages as $message) { ?>
+        <div class="alert alert-success" role="alert">
+            <?= $message ?>
+        </div>
+    <?php } ?>
+    <?php foreach ($errors as $error) { ?>
+        <div class="alert alert-danger" role="alert">
+            <?= $error ?>
+        </div>
+    <?php } ?>
+    
     <form method="post" class="p-4 d-flex flex-column">
             <label class="form-label mb-3">Prénom
                 <input type="text" class="form-control" name="first_name">
