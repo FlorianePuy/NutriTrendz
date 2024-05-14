@@ -8,3 +8,7 @@ h1,h2 {
     color: var(--success);
     font-family: monospace;
 }
+#logo-link {
+    width: 76px;
+    height: 76px;
+}
