@@ -1,5 +1,16 @@
 <?php
     require_once __DIR__ . '/templates/header.php';
+    require_once __DIR__ . '/../app/config.php';
+    require_once __DIR__ . '/../app/pdo.php';
+    require_once __DIR__ . '/../app/categories.php';
+
+    //initialisation des variables
+$messages=[];
+$errors=[];
+$article=[];
+$categories=getCategories($pdo);
+
+
 ?>
 <h1 class="fw-bold mt-3">Sauvegarde d'article</h1>
     <form class="mb-3 d-flex flex-column" action="" method="post" enctype="multipart/form-data">

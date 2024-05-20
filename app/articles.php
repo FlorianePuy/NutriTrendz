@@ -1,6 +1,6 @@
 <?php
 
- function getArticles (PDO $pdo, int $limit=null, int $page=1):array
+ function getArticles (PDO $pdo, int $limit=null, int $page=1):array|bool
  {
      if ($page<=0){
          $page=1;
