@@ -32,7 +32,9 @@ if (isset($_GET['id'])) {
         </label>
         <label class="form-label mb-3">Catégories
             <select class="form-select" name="">
-                <option value="1">Catégorie 1 en dur</option>
+                <?php foreach ($categories as $key => $category) { ?>
+                    <option value="<?= (int)$category['id']; ?>"><?= $category['name'];?></option>
+                <?php } ?>
             </select>
         </label>
         <div class="mb-3">
