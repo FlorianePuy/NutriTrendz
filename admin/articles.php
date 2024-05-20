@@ -16,7 +16,9 @@
 
 ?>
     <h1 class="mt-3 fw-bold">Liste des articles</h1>
-
+    <div class="my-3">
+        <a href="article.php" class="btn btn-primary text-light">Ajouter un article</a>
+    </div>
     <table class="table">
         <thead>
         <tr>

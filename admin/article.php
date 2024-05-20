@@ -3,6 +3,7 @@
     require_once __DIR__ . '/../app/config.php';
     require_once __DIR__ . '/../app/pdo.php';
     require_once __DIR__ . '/../app/categories.php';
+    require_once __DIR__ . '/../app/articles.php';
 
     //initialisation des variables
 $messages=[];
@@ -10,9 +11,18 @@ $errors=[];
 $article=[];
 $categories=getCategories($pdo);
 
+if (isset($_GET['id'])) {
+    $article=getArticleById($pdo,(int)$_GET['id']);
+    if (!$article){
+        $errors="L'article n'existe pas";
+    }
+    $pageTitle="Modification d'un article";
+}else {
+    $pageTitle="Création d'un article";
+}
 
 ?>
-<h1 class="fw-bold mt-3">Sauvegarde d'article</h1>
+<h1 class="fw-bold mt-3"><?= $pageTitle; ?></h1>
     <form class="mb-3 d-flex flex-column" action="" method="post" enctype="multipart/form-data">
         <label class="form-label mb-3">Titre
             <input class="form-control" type="text">
