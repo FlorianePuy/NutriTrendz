@@ -30,14 +30,16 @@
             <tr>
                 <th scope="row"><?= $article['id']; ?></th>
                 <td><?= $article['title']; ?></td>
-                <td>Modifier | Supprimer</td>
+                <td>
+                    <a href="article.php?id=<?= $article['id']; ?>">Modifier</a> | <a href="#">Supprimer</a>
+                </td>
             </tr>
         <?php    } ?>
         </tbody>
     </table>
 
     <?php if($totalPages>1) {?>
-    <nav aria-label="Page navigation example">
+    <nav aria-label="Page navigation">
         <ul class="pagination">
             <?php for($i=1; $i <= $totalPages; $i++) {?>
             <li class="page-item">

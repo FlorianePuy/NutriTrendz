@@ -2,7 +2,7 @@
 
 //fonction provenant de Symfony pour assainir un nom de fichier
 
-function slugify($text, string $divider = '-')
+function slugify($text, string $divider = '-'):string
 {
     // remplace ce qui n'est pas un nombre ou une lettre par $divider
     $text = preg_replace('~[^\pL\d]+~u', $divider, $text);
