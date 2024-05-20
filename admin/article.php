@@ -1,20 +1,25 @@
 <?php
     require_once __DIR__ . '/templates/header.php';
 ?>
-<h1 class="fw-bold text-center mt-3">Sauvegarde d'article</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <label>Titre
-            <input type="text">
+<h1 class="fw-bold mt-3">Sauvegarde d'article</h1>
+    <form class="mb-3 d-flex flex-column" action="" method="post" enctype="multipart/form-data">
+        <label class="form-label mb-3">Titre
+            <input class="form-control" type="text">
         </label>
-        <label>Contenu
-            <textarea name="" cols="30" rows="10"></textarea>
+        <label class="form-label mb-3">Contenu
+            <textarea class="form-control" name="" cols="30" rows="10"></textarea>
         </label>
-        <label>Catégories
-            <select name="">
+        <label class="form-label mb-3">Catégories
+            <select class="form-select" name="">
                 <option value="1">Catégorie 1 en dur</option>
             </select>
         </label>
-        <button class="btn-primary btn text-light" type="submit">Enregistrer</button>
+        <div class="mb-3">
+            <input type="file" name="image">
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary text-light" type="submit" value="Enregistrer" name="saveArticle">
+        </div>
     </form>
 <?php
 require_once __DIR__ . '/templates/footer.php';
