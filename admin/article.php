@@ -25,12 +25,47 @@ if (isset($_POST['saveArticle']) && ($_SERVER['REQUEST_METHOD']=="POST")) {
     $fileName = null;
     if (isset($_FILES['file']['tmp_name']) && ($_FILES['file']['tmp_name']!='')){
         if (getimagesize($_FILES['file']['tmp_name'])) {
-            //slugify sur le nom du fichier puis traitement
+            $fileName = slugify(basename($_FILES['file']['tmp_name']));
+            $fileName = uniqid().'-'.$fileName;
+
+            if (move_uploaded_file($_FILES['file']['tmp_name'],dirname(__DIR__).IMAGES_ARTICLE_PATH.$fileName)) {
+                if (isset($_POST['image'])){
+                    unlink(dirname(__DIR__).IMAGES_ARTICLE_PATH.$_POST['image']);
+                }
+            } else {
+                $errors = 'Le fichier n\'a pas été uploadé';
+            }
         } else {
-            $errors = 'Le fichier dois être une image';
+            $errors = 'Le fichier doit être une image';
         }
-    }else {
-        //cas d'une modification avec ou sans suppression de l'image
+    } else {
+        if (isset($_GET['id'])) {
+            if (isset($_POST['delete_image'])) {
+                unlink(dirname((__DIR__).IMAGES_ARTICLE_PATH.$_POST['image']));
+            } else {
+                $fileName = $_POST['image'];
+            }
+        }
+    }
+
+    $article = [
+        'title' => $_POST['title'],
+        'content_long' => $_POST['content_long'],
+        'content_short' => $_POST['content_short'],
+        'category_id' => $_POST['category_id'],
+        'image' =>  $fileName
+    ];
+
+    if (!$errors) {
+        if (isset($_GET['id'])) {
+            $id = (int)$_GET['id'];
+        } else {
+            $id = null;
+        }
+        $res = saveArticle($pdo,$_POST['title'],$_POST['content_long'],$_POST['content_short'],$fileName, (int)
+        $_POST['category_id'],$id);
+    } else {
+        $errors [] = 'L\'article n\'a pas été sauvegardé';
     }
 }
 

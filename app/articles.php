@@ -1,5 +1,24 @@
 <?php
+    function saveArticle(PDO $pdo, string $title, string $content_long,string $content_short, string|null $image, int $category_id, int $id = null):bool
+{
+    if ($id === null) {
+        $query = $pdo->prepare("INSERT INTO articles (title, content_long, content_short, image, category_id) "
+            ."VALUES(:title, :content_long, :content_short :image, :category_id)");
+    } else {
+        $query = $pdo->prepare("UPDATE `articles` SET title = :title, "
+            ."content_long = :content_long, content_short = :content_short"
+            ."image = :image, category_id = :category_id WHERE id = :id;");
 
+        $query->bindValue(':id', $id, $pdo::PARAM_INT);
+    }
+
+    $query->bindValue(':title', $title);
+    $query->bindValue(':content_long', $content_long);
+    $query->bindValue(':content_short', $content_short);
+    $query->bindValue(':image',$image);
+    $query->bindValue(':category_id',$category_id, $pdo::PARAM_INT);
+    return $query->execute();
+}
  function getArticles (PDO $pdo, int $limit=null, int $page=1):array|bool
  {
      if ($page<=0){
