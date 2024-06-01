@@ -21,6 +21,19 @@ if (isset($_GET['id'])) {
     $pageTitle="Création d'un article";
 }
 
+if (isset($_POST['saveArticle']) && ($_SERVER['REQUEST_METHOD']=="POST")) {
+    $fileName = null;
+    if (isset($_FILES['file']['tmp_name']) && ($_FILES['file']['tmp_name']!='')){
+        if (getimagesize($_FILES['file']['tmp_name'])) {
+            //slugify sur le nom du fichier puis traitement
+        } else {
+            $errors = 'Le fichier dois être une image';
+        }
+    }else {
+        //cas d'une modification avec ou sans suppression de l'image
+    }
+}
+
 ?>
 <h1 class="fw-bold mt-3"><?= $pageTitle; ?></h1>
     <form class="mb-3 d-flex flex-column" action="" method="post" enctype="multipart/form-data">
